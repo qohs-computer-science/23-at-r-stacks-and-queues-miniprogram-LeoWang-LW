@@ -17,15 +17,45 @@ class StackQueueMini {
     count++; 
     }
 
-    System.out.println(myStack); 
+    System.out.println("Bottom " + myStack + " Top"); 
+
+    System.out.println("Bottom " + duplicate(myStack) + " Top");
+
+    count = 0; 
+
+    Queue <Integer> myQueue = new LinkedList<Integer>(); 
+
+    while(count < 10){
+    System.out.println("Please enter a whole number: ");
+    int number = in.nextInt(); 
+    myQueue.add(number); 
+    count++; 
+    }
+    System.out.println( "Front " + myQueue + " Back");
+
 
 
   } // end main
 
-  public static int duplicate(Stack <Integer> e){
-    Stack <Integer> temp = e;
-    Stack <Integer> temp2 = e; 
-    Stack <Integer> temp3 = new Stack<Integer>(); 
-    
+  public static Stack<Integer> duplicate(Stack <Integer> e){
+    Stack <Integer> temp = new Stack<Integer>(); 
+    while(!e.isEmpty()){
+      int x = 0; 
+      x = e.pop(); 
+      temp.push(x); 
+      temp.push(x); 
+    }
+    while(!temp.isEmpty()){
+      e.push(temp.pop());
+    }
+    return e; 
   }
+
+  public static Queue<Integer> evenOdds(Queue <Integer> e){
+    Queue <Integer> temp = new LinkedList<Integer>(); 
+    for(int i = 0; i < 10; i++){
+      
+    }
+  }
+
 } // end class
